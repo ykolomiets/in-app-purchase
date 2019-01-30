@@ -258,7 +258,11 @@ module.exports.refreshGoogleToken = function (cb) {
 
 function isUnityReceipt(receipt) {
 	if (receipt.Store) {
-		if (receipt.Store === constants.UNITY.GOOGLE || receipt.Store === constants.UNITY.APPLE) {
+		if (
+			receipt.Store === constants.UNITY.GOOGLE
+			|| receipt.Store === constants.UNITY.APPLE
+			|| receipt.Store === constants.UNITY.APPLE_MAC
+		) {
 			return true;
 		}
 	}
@@ -274,6 +278,7 @@ function getServiceFromUnityReceipt(receipt) {
 		case constants.UNITY.GOOGLE:
 			return module.exports.GOOGLE;
 		case constants.UNITY.APPLE:
+		case constatns.UNITY.APPLE_MAC:
 			return module.exports.APPLE;
 	}
 	// invalid Store value
@@ -300,6 +305,7 @@ function parseUnityReceipt(receipt) {
 				signature: receipt.Payload.signature
 			};
 		case constants.UNITY.APPLE:
+		case constants.UNITY.APPLE_MAC:
 			return receipt.Payload;
 	}
 }

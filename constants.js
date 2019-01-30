@@ -12,6 +12,7 @@ exports.SERVICES = {
 
 exports.UNITY = {
 	APPLE: 'AppleAppStore',
+	APPLE_MAC: 'MacAppStore',
 	GOOGLE: 'GooglePlay'
 };
 
