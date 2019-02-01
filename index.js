@@ -278,7 +278,7 @@ function getServiceFromUnityReceipt(receipt) {
 		case constants.UNITY.GOOGLE:
 			return module.exports.GOOGLE;
 		case constants.UNITY.APPLE:
-		case constatns.UNITY.APPLE_MAC:
+		case constants.UNITY.APPLE_MAC:
 			return module.exports.APPLE;
 	}
 	// invalid Store value
